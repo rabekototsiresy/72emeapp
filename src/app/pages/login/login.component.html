@@ -1,0 +1,29 @@
+<div class="row mt-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 border p-3">
+        <form class="p-2" #info="ngForm" (ngSubmit)="loginFromService(info)">
+            <legend>
+                Fidirana
+            </legend>
+            <div class="alert alert-danger" *ngIf="errorMessage">
+                {{ errorMessage }}
+            </div>
+            <hr>
+            <div class="form-group">
+                <label for="username">Fiantsoana: </label>
+                <input type="text" name="username" id="username" class="form-control" ngModel required>
+            </div>
+            <div class="form-group">
+                <label for="password">Teny Miafina: </label>
+                <input type="password" name="password" id="password" class="form-control" ngModel required>
+            </div>
+            <div class="form-group">
+                <button [disabled]="info.invalid" type="submit" class="btn btn-primary btn-block">Hiditra</button>
+            </div>
+            <div class="form-grou">
+                <a routerLink="/register">Hamorona kaonty</a>
+            </div>
+        </form>
+    </div>
+</div>
+

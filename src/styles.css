@@ -1,0 +1,30 @@
+/* CENTRER UN ELEMENT */
+
+.box-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.mt-65{
+    margin-top: 65px;
+}
+
+.card-img-top-full{
+    -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.addition-style-image{
+    border-radius: 55%;
+    width: 70%;
+    margin-left: 15%;
+    height: 36vh;
+}
+
+.body-custom{
+    text-align: center;
+}
