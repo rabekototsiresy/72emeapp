@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
 import jwt_decode from "jwt-decode";
+import env from "src/app/common/config"
 
 @Component({
   selector: 'app-card-bea',
@@ -11,7 +12,7 @@ export class CardBeaComponent implements OnInit {
 
   @Input() bea:any = {};
   @Input() sampana: string = "";
-  imageLink="http://localhost:7000/public/uploads/images/";
+  imageLink= `${env.HOST_URL_FRONT}/public/uploads/images/`;
   user_id="";
   usersConnected:any = {};
   isNotBeazina: boolean = true;

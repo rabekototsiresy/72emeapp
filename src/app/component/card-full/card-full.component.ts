@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UserService } from 'src/app/services/user/user.service';
 import jwt_decode from 'jwt-decode'
+import env from 'src/app/common/config'
 
 @Component({
   selector: 'app-card-full',
@@ -20,7 +21,7 @@ export class CardFullComponent implements OnInit {
   roleActive = "";
   idUser = "";
   linkBack="";
-  imageLink="http://localhost:7000/public/uploads/images/";
+  imageLink=`${env.HOST_URL_FRONT}/public/uploads/images/`;
   trueImageLink = "";
   constructor(private userService: UserService,private router: ActivatedRoute) { }
 
