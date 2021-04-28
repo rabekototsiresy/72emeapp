@@ -21,7 +21,7 @@ export class CardFullComponent implements OnInit {
   roleActive = "";
   idUser = "";
   linkBack="";
-  imageLink=`${env.HOST_URL_FRONT}/public/uploads/images/`;
+  imageLink=`${env.HOST_URL_API}/public/uploads/images/`;
   trueImageLink = "";
   constructor(private userService: UserService,private router: ActivatedRoute) { }
 

@@ -13,7 +13,7 @@ export class CardMpComponent implements OnInit {
   @Input() mp:any = {};
   @Input() sampana: string = "";
   id_user: any = "";
-  imageLink=env.HOST_URL_FRONT+"/public/uploads/images/";
+  imageLink=env.HOST_URL_API+"/public/uploads/images/";
   isNotBeazina: boolean = true
 
   constructor(private userService: UserService,private route: ActivatedRoute) { }

@@ -12,7 +12,7 @@ export class CardBeaComponent implements OnInit {
 
   @Input() bea:any = {};
   @Input() sampana: string = "";
-  imageLink= `${env.HOST_URL_FRONT}/public/uploads/images/`;
+  imageLink= `${env.HOST_URL_API}/public/uploads/images/`;
   user_id="";
   usersConnected:any = {};
   isNotBeazina: boolean = true;

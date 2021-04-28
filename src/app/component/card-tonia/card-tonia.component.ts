@@ -12,7 +12,7 @@ export class CardToniaComponent implements OnInit {
 
   @Input() tonia:any = {};
   @Input() sampana: string = "";
-  imageLink= env.HOST_URL_FRONT+"/public/uploads/images/";
+  imageLink= env.HOST_URL_API+"/public/uploads/images/";
   id_user = "";
   isNotBeazina: boolean = true;
 
