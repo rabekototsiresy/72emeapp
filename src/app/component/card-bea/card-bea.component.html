@@ -1,0 +1,26 @@
+
+<div class="card mb-3 card-details border" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4 dFlexCol">
+        <img [src]="imageLink"alt="..." class="img-fluid">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <!-- <h5 class="card-title">Card title</h5> -->
+          <p class="card-text">
+
+            
+            <b>Anarana: </b> <i>{{bea.fullName}}</i>
+          </p>
+          <p class="card-text"><small class="text-muted">{{bea.sampana}}</small></p>
+          <p class="d-flex justify-content-between">
+           
+            <a [routerLink]="'/user/'+[user_id]" class="btn btn-primary">HIJERY</a>
+            <a [routerLink]="'/user/edit/'+[user_id]" class="btn btn-success"  *ngIf="isNotBeazina">HANOVA</a>
+            <button (click)="removeBeazinaFromService(bea._id)" class="btn btn-danger" *ngIf="isNotBeazina">HAMAFA</button>
+            
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>

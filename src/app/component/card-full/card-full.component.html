@@ -1,18 +1,25 @@
-<div class="card col-md-8">
-    <img class="card-img-top-full" [src]="trueImageLink" alt="Card image">
+<div class="card mt-5 bg-black border">
+    <img class="card-img-top-full rounded" [src]="trueImageLink" alt="Card image">
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">{{ user.fullName }}</li>
-            <li class="list-group-item">{{user.username}}</li>
-            <li class="list-group-item">{{user.role}}</li>
+            <li class="list-group-item">
+               <b>Anarana: </b> {{ user.fullName }}
+            </li>
+            <li class="list-group-item">
+                <b>Fiantsoana: </b>{{user.username}}
+            </li>
+            <li class="list-group-item">
+                <b>Andraikitra: </b>{{user.role}}
+            </li>
           </ul>
           <br>
           <div>
               
           </div>
-         <div class="col-">
-            <a class="btn btn-primary mx-3" *ngIf="roleActive=='mpiandraikitra'" routerLink="/home">Hiverina</a>
-            <a *ngIf="!user.avatar" [routerLink]="'/upload-avatar/'+[idUser]" class="btn btn-success pull-right">Hampiditra sary</a>
+         <div class="col-md-12  d-flex justify-content-between ">
+            <a *ngIf="!user.avatar" [routerLink]="'/upload-avatar/'+[idUser]" class="btn btn-success mx-1 ">Hampiditra sary</a>
+
+            <a  [routerLink]="'/'+[linkBack]" class="btn btn-primary mx-1">HIVERINA</a>
          </div>
 
          

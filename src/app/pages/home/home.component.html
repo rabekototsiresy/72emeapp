@@ -1,52 +1,78 @@
 <app-navbar></app-navbar>
 <div class="container">
+
     <div class="row mt-65">
-        <div class="col-md-12 ">
-            <h3 class="">Antotanisa</h3>
+        <div class="col-md-12  text-center">
+            <h3 class="text-white">Antotanisa</h3>
             <hr>
         </div>
-        <div class="col-md-2 col-sm-4 card mx-5">
+        <div class="col-md-4 col-sm-12 card border-black   nav-sampana">
             <p>Tonia</p>
             <h1>{{nbT}}</h1>
         </div>
         <br>
-        <div class="col-md-2 col-sm-4 card mx-5">
-            <p>MPiandraikitra</p>
-            <h1>{{nbMp}}</h1>
+        <div class="col-md-3 col-sm-12 border-black  card m-2 nav-sampana" >
+            <div class="row">
+                <div class="col-md-4">
+                    <p>MPiandraikitra</p>
+                    <h1>{{nbMp}}</h1>
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>Lovitao: {{ nbEeachSampanaMp.lovitao }}</li>
+                        <li>Mpianjoria: {{ nbEeachSampanaMp.mpianjoria }}</li>
+                        <li>Mpamakilay: {{ nbEeachSampanaMp.mpamakilay }}</li>
+                        <li>Mpiandalana: {{ nbEeachSampanaMp.mpiandalana }}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <br>
-        <div class="col-md-2 col-sm-4 card mx-5">
-            <p>Beazina</p>
-            <h1>{{nbBea}}</h1>
+        <div class="col-md-4 col-sm-12 col-sm-4 border-black card  nav-sampana">
+            <div class="row">
+                <div class="col-md-4">
+                    <p>Beazina</p>
+                    <h1>{{nbBea}}</h1>
+                </div>
+                <div class="col-md-8">
+                    <ul>
+                        <li>Lovitao: {{nbEeachSampanaBea.lovitao}}</li>
+                        <li>Mpianjoria: {{nbEeachSampanaBea.mpianjoria}}</li>
+                        <li>Mpamakilay: {{nbEeachSampanaBea.mpamakilay}}</li>
+                        <li>Mpiandalana: {{nbEeachSampanaBea.mpiandalana}}</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <hr>
 
+
 <div class="container">
-    <div class="row mt-65">
-        <div class="col-md-12 ">
+    <div class="row ">
+        <div class="col-md-12  text-white text-center">
             <h3 class="">Sampana</h3>
             <hr>
         </div>
-        <a routerLink="/sampana/lovitao" class="col-md-2 card-sm-12  card mx-3 bg-warning text-white text-center" >
+        <a routerLink="/sampana/lovitao" class="col-md-2 card-sm-12 my-1  card mx-3 bg-warning text-white text-center d-flex border-black  justify-content-center pt-3" >
             <p>Lovitao</p>
         </a>
         <br>
-        <a routerLink="/sampana/mpianjoria" class="col-md-2  card mx-3 bg-success text-white text-center">
+        <a routerLink="/sampana/mpianjoria"   class="col-md-2 pt-3  my-1 card mx-3 bg-success text-white text-center border-black ">
             <p>Mpianjoria</p>
         </a>
         <br>
-        <a  routerLink="/sampana/mpamakilay" class="col-md-2 card mx-3 bg-primary text-white text-center">
+        <a  routerLink="/sampana/mpamakilay" class=" border-black col-md-2  my-1 pt-3 card mx-3 bg-primary text-white text-center">
             <p>MPamakilay</p>
         </a>
         <br>
-        <a  routerLink="/sampana/mpiandalana" class="col-md-2  card mx-3 bg-danger text-white text-center">
+        <a  routerLink="/sampana/mpiandalana" class="col-md-2 border-black  my-1 pt-3 card mx-3 bg-danger text-white text-center">
             <p>Miandala</p>
         </a>
         <br>
-        <a  routerLink="/sampana/tonia" class="col-md-2  card mx-3 bg-secondary text-white text-center">
+        <a  routerLink="/sampana/tonia" class="col-md-2 pt-3  my-1 border-black  card mx-3 bg-secondary text-white text-center">
             <p>Tonia</p>
         </a>
     </div>

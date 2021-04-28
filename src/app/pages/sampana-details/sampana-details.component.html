@@ -1,47 +1,35 @@
 
 <app-navbar></app-navbar>
 <div class="container">
-    <div class="row mt-65">
+    <div class="row mt-80">
 
-        <div class="col-md-2 border">
-           
-                <p>Mpiandraikitra</p>
-                <h1>{{numberOfMp}}</h1>
-          
+        <div class="col-md-2 card my-5 border-black  bg-yellow">
+                <!--   Si tonia  -->
+                <p *ngIf="isTonia">Tonia</p>
+                <p *ngIf="!isTonia">Mpiandraikitra</p>
+                <h1 *ngIf="isTonia">{{numOfTonia}}</h1>
+                <h1 *ngIf="!isTonia">{{numberOfMp}}</h1>
         </div>
-        <div class="col-md-8 border">
-            <app-card-mp *ngFor="let mp of listOfMp" [mp]="mp"></app-card-mp>
+        <div class="col-md-8 " *ngIf="!isTonia" >
+            <app-card-mp  *ngFor="let mp of listOfMp" [mp]="mp" [sampana]="sampanaName" ></app-card-mp>
+        </div>
+
+        <div class="col-md-8 " *ngIf="isTonia">
+            <app-card-tonia *ngFor="let tonia of listOfTonia" [tonia]="tonia" [sampana]="sampanaName"></app-card-tonia>
         </div>
         
-        
-        
-  
     </div>
 </div>
 
 
-<div class="container">
+<div class="container" *ngIf="!isTonia">
     <div class="row mt-65">
-        <div class="col-md-2 col-sm-4 card mx-5">
+        <div class="col-md-2 col-sm-4 mb-3 card border-black bg-yellow">
             <p>Beazina</p>
-            <h1>50</h1>
+            <h1>{{numOfBea}}</h1>
         </div>
         <div class="col-md-8 ">
-            <div class="row my-2">
-                <div class="card col-md-2 border">
-                    <img src="assets/todi.JPG" class="img-fluid" alt="...">
-                </div>
-                <div class="col-md-9 card mx-2">
-                    <h5><u><b>Anarana: </b></u> <i>RABEKOTO Tsiresy NY Riana Aldo Janny</i></h5>
-                    <h5><u><b>Adiresy: </b></u> <i>LOT 239 I Ambohinambo Talatamaty</i></h5>
-                    <h5><u><b>Finday: </b></u> <i>034 88 099 77</i></h5>
-                </div>   
-            </div>
-           
-
-
-            
-            
+            <app-card-bea *ngFor="let bea of listOfBea" [bea]="bea" [sampana]="sampanaName"></app-card-bea>
         </div>
   
     </div>

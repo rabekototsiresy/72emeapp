@@ -17,6 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(private userService: UserService,private authService: AuthService) { }
 
   ngOnInit(): void {
+    document.title = "i-konekta"
+
   }
 
   loginFromService(info: NgForm){

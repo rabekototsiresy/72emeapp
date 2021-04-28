@@ -1,15 +1,21 @@
+
+<app-navbar *ngIf="logged"></app-navbar>
 <div class="row container">
     <div class="col-md-4"></div>
     <div class="col-md-6  pt-5">
         <div class="alert alert-danger" *ngIf="errrorMessageUploadFileFromService">
             {{errrorMessageUploadFileFromService}}
         </div>
-        <label for="avatar">Sary fanehoana: </label>
+        <label for="avatar" class="text-white">ary fanehoana: </label>
         <input type="file" (input)="handleFile($event)" name="avatr" id="" class="form-control">
         <br>
         <button [disabled]="!shoudSubmit" (click)="addAvatarFromService()" class="btn btn-primary btn-block">EKENA</button>
         <div class="m-4">
             <a *ngIf="!token" routerLink="/">Tsy hampiditra sary,hiditra amin'ny kaontiko</a>
+        </div>
+
+        <div class="m-4">
+            <a *ngIf="token"  [routerLink]="'/user/'+[id_user]">Hiverina</a>
         </div>
     </div>
 

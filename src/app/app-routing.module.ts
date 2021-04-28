@@ -4,6 +4,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AvatarUploadComponent } from './pages/avatar-upload/avatar-upload.component';
 import { CongratulationComponent } from './pages/congratulation/congratulation.component';
 import { DetailUserComponent } from './pages/detail-user/detail-user.component';
+import { EditComponent } from './pages/edit/edit.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListUserComponent } from './pages/list-user/list-user.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -23,6 +24,9 @@ const routes: Routes = [
   },
   {
     path: "user/:id", canActivate: [AuthGuard],component: DetailUserComponent
+  },
+  {
+    path: "user/edit/:id", canActivate: [AuthGuard],component: EditComponent
   },
   {
     path: "congratulation", component: CongratulationComponent

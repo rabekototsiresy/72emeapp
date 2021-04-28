@@ -15,10 +15,13 @@ export class RegisterComponent implements OnInit {
   defaultRole ="tonia";
   defaultSampana = "lovitao";
   isTonia = false;
+  titlePage = "Hanokatra kaonty"
   
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    document.title = this.titlePage;
+      
   }
 
   handleRole(event: any){

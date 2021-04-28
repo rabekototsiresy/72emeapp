@@ -19,6 +19,7 @@ export class CardFullComponent implements OnInit {
   userSubscription: Subscription = new Subscription();
   roleActive = "";
   idUser = "";
+  linkBack="";
   imageLink="http://localhost:7000/public/uploads/images/";
   trueImageLink = "";
   constructor(private userService: UserService,private router: ActivatedRoute) { }
@@ -30,10 +31,16 @@ export class CardFullComponent implements OnInit {
  
     let id = this.router.snapshot.params.id;
     this.idUser = id
-   
     this.userSubscription = this.userService.simpleUserSubject.subscribe(
       (response: any)=>{
         this.user = response;
+        
+          if(this.user.sampana){
+            this.linkBack = "/sampana/"+this.user.sampana
+          }else{
+            this.linkBack = "sampana/"+this.user.role
+          }
+
         let inc = 0;
         if(this.user.avatar){
           this.trueImageLink = "http://localhost:7000/public/uploads/images/"+this.user.avatar

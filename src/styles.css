@@ -11,6 +11,10 @@
     margin-top: 65px;
 }
 
+.mt-80{
+    margin-top: 80px;
+}
+
 .card-img-top-full{
     -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -27,4 +31,52 @@
 
 .body-custom{
     text-align: center;
+}
+
+
+body{
+    
+    background: #FBFF1D; /* fallback color if gradients are not supported*/ 
+    background: -webkit-linear-gradient(337deg,#FBFF1D 46%, #000000 6%);
+    background: -moz-linear-gradient(337deg,#FBFF1D 46%, #000000 6%);
+    background: -o-linear-gradient(337deg,#FBFF1D 46%, #000000 6%);
+    background: linear-gradient(337deg,#FBFF1D 46%, #000000 6%);
+    /* background-repeat: no-repeat; */
+    height: 100vh;
+    margin: 0;
+
+ font-family: season;
+    
+
+}
+
+@font-face{
+    font-family: season;
+    src: url("assets/fonts/Snowy Season.ttf");
+}
+
+.bg-yellow{
+    background-color: #FBFF1D;
+}
+
+
+.card-details{
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.bg-black{
+    background-color: black;
+}
+
+
+.border-black{
+    border: 2px solid black
+}
+
+
+.dFlexCol{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

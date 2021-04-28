@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import jwt_decode from 'jwt-decode';
+import env from "src/app/common/config"
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,8 @@ export class UserService {
     listMp: [],
     listBea: []
   };
+  tonia = [];
+  toniaSubject = new Subject();
 
 
   simpleUserSubject = new Subject();
@@ -53,11 +56,18 @@ export class UserService {
 
   }
 
+  emitToniaSubject(){
+    this.toniaSubject.next(this.tonia);
+  }
+
   register(info: any){
 
-    this.httClient.post("http://localhost:7000/api/v1/beazina/register",info).subscribe(
+    this.httClient.post(`${env.HOST_URL_API}/api/v1/beazina/user`,info).subscribe(
       (response:any)=>{
-        console.log(response)
+        if(response.error){
+          this.errorMessage = response.error;
+          this.emitErrorMessage()
+        }
         this.idToUpload = response.data._id;
 
         this.router.navigate(['upload-avatar',response.data._id])
@@ -73,7 +83,7 @@ export class UserService {
 
     const token: any = `Bearer ${localStorage.getItem('token')}`;
 
-    this.httClient.get("http://localhost:7000/api/v1/beazina",{
+    this.httClient.get(`${env.HOST_URL_API}/api/v1/beazina`,{
       headers: {
         authorization:token
       }
@@ -91,7 +101,7 @@ export class UserService {
 
   oneUser(id: any){
     const token: any = `Bearer ${localStorage.getItem('token')}`;
-    this.httClient.get(`http://localhost:7000/api/v1/beazina/user/${id}`,{
+    this.httClient.get(`${env.HOST_URL_API}/api/v1/beazina/user/${id}`,{
       headers: {
         authorization: token
       }
@@ -112,7 +122,7 @@ export class UserService {
     const token:any = localStorage.getItem('token');
     
 
-    this.httClient.post('http://localhost:7000/api/v1/beazina/upload-avatar/'+id,data).subscribe(
+    this.httClient.post(`${env.HOST_URL_API}/api/v1/beazina/upload-avatar/${id}`,data).subscribe(
       (response: any)=>{  
         if(token){
             
@@ -130,10 +140,11 @@ export class UserService {
 
 
   getMpFromSampana(sampanaName: string){
-    this.httClient.get("http://localhost:7000/api/v1/beazina/mp/"+sampanaName).subscribe(
+    this.httClient.get(`${env.HOST_URL_API}/api/v1/beazina/mp/${sampanaName}`).subscribe(
       (response: any)=>{
         this.mpAndBeaList.listMp = response.data
         this.emitMpAndBea()
+
       }
     )
 
@@ -141,10 +152,10 @@ export class UserService {
 
   getBeazinaFromSampana(sampanaName: string){
 
-    this.httClient.get("http://localhost:7000/api/v1/beazina/bea/"
-  +sampanaName).subscribe(
-      (response:any)=>{
-        console.log(response)
+    this.httClient.get(`${env.HOST_URL_API}/api/v1/beazina/bea/${sampanaName}`).subscribe(
+      (response:any)=>{   
+        this.mpAndBeaList.listBea = response.data;
+        this.emitMpAndBea();
       },
       error=>{
         console.log(error)
@@ -155,8 +166,52 @@ export class UserService {
 
 
   getToniaFromFiv(){
+    this.httClient.get(`${env.HOST_URL_API}/api/v1/beazina/tonia`).subscribe(
+      (response:any)=>{
+        this.tonia = response.data
+        this.emitToniaSubject()
+      },
+      error=>{
+        console.log(error)
+      }
+    )
 
   }
+
+
+
+  removeUser(id:string,sampana: string){
+    this.httClient.delete(`${env.HOST_URL_API}/api/v1/beazina/user/${id}`).subscribe(
+      (response:any)=>{
+        console.log(response)
+        this.getBeazinaFromSampana(sampana);
+        this.getMpFromSampana(sampana)
+        this.getToniaFromFiv();
+        this.emitToniaSubject()
+        this.emitMpAndBea()
+      
+      },
+      err=>{
+        console.log(err)
+      }
+    )
+  }
+
+
+updateUser(id:string,data: any){
+  this.httClient.put(`${env.HOST_URL_API}/api/v1/beazina/user/${id}`,data).subscribe(
+  (response: any)=>{
+    if(response){
+       this.router.navigate(['user',id])
+    }
+   
+    
+  },
+  err=>{
+    console.log(err)
+  }
+  )
+}
 
   
 

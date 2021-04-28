@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
@@ -15,10 +16,17 @@ export class AvatarUploadComponent implements OnInit {
   shoudSubmit = false;
   errrorMessageUploadFileFromService = "";
   errorMessageUploadFileSubscription: Subscription = new Subscription();
-  constructor(private userService: UserService,private router: ActivatedRoute) { }
+  constructor(private userService: UserService,private router: ActivatedRoute,private authService: AuthService) { }
+  logged = false;
+  id_user = "";
   
   
   ngOnInit(): void {
+    this.logged = this.authService.logged
+    const id = this.router.snapshot.params.id;
+    this.id_user = id
+
+    
   }
 
   handleFile(event: any){

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Routes,RouterModule } from '@angular/router'
 import {AppRoutingModule } from "./app-routing.module"
 import { HttpClientModule } from '@angular/common/http'
+import {FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 
 import { AppComponent } from './app.component';
@@ -20,6 +21,9 @@ import { AvatarUploadComponent } from './pages/avatar-upload/avatar-upload.compo
 import { ListUserComponent } from './pages/list-user/list-user.component';
 import { SampanaDetailsComponent } from './pages/sampana-details/sampana-details.component';
 import { CardMpComponent } from './component/card-mp/card-mp.component';
+import { CardBeaComponent } from './component/card-bea/card-bea.component';
+import { CardToniaComponent } from './component/card-tonia/card-tonia.component';
+import { EditComponent } from './pages/edit/edit.component';
 
 
 
@@ -40,6 +44,9 @@ import { CardMpComponent } from './component/card-mp/card-mp.component';
     ListUserComponent,
     SampanaDetailsComponent,
     CardMpComponent,
+    CardBeaComponent,
+    CardToniaComponent,
+    EditComponent,
 
   ],
   imports: [
@@ -47,6 +54,7 @@ import { CardMpComponent } from './component/card-mp/card-mp.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FontAwesomeModule
     
     
     

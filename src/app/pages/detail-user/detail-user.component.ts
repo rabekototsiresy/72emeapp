@@ -16,10 +16,13 @@ export class DetailUserComponent implements OnInit {
   constructor(private userService: UserService,private router: ActivatedRoute) { }
 
   ngOnInit(): void {
+      // document.title = "Mahakasika an\'i"
       let id = this.router.snapshot.params.id;
       this.userSubscription = this.userService.usersSubject.subscribe(
         (response: any)=>{
+         
           this.user = response;
+         
         },
         error=>{
           console.log(error)
