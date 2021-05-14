@@ -4,24 +4,24 @@
     <div class="col-md-3"></div>
     <div class="col-md-6 border p-3">
         <form class="p-2" #info="ngForm" (ngSubmit)="registerFromService(info)">
-            <legend>
+            <legend class="h2">
                 Hamorona Kaonty
             </legend>
-            <div class="alert alert-danger" *ngIf="errorMessage">
+            <div class="alert alert-danger sI20" *ngIf="errorMessage">
                 {{ errorMessage }}
             </div>
             <hr>
             <div class="form-group">
-                <label for="fullName">Anarana Feno:  </label>
-                <input type="text" name="fullName" id="fullName" class="form-control" ngModel required>
+                <label for="fullName" class="h3">Anarana Feno:  </label>
+                <input type="text" name="fullName" id="fullName" class="form-control sI20" ngModel required>
             </div>
             <div class="form-group">
-                <label for="username">Fiantsoana </label>
-                <input type="text" name="username" id="username" class="form-control" ngModel required>
+                <label for="username" class="h3">Fiantsoana </label>
+                <input type="text" name="username" id="username" class="form-control sI20" ngModel required>
             </div>
             <div class="form-group">
-                <label for="role">Andraikitra sahanina: </label>
-                <select (input)="handleRole($event)" name="role" id="role" class="form-control" [ngModel]="defaultRole">
+                <label for="role" class="h3">Andraikitra sahanina: </label>
+                <select (input)="handleRole($event)" name="role" id="role" class="form-control sI20" [ngModel]="defaultRole">
                     <option value="tonia">Tonia</option>
                     <option value="mpiandraikitra">Mpiandraikitra</option>
                     <option value="beazina">Beazina</option>
@@ -29,9 +29,8 @@
                 </select>
             </div>
             <div class="form-group" *ngIf="isTonia">
-                <label for="sampana">Sampana: </label>
-                <select name="sampana" id="sampana" class="form-control" [ngModel]="defaultSampana">
-                    <option value="lovitao" selected>sampana misy anao</option>
+                <label for="sampana" class="h3">Sampana: </label>
+                <select name="sampana" id="sampana" class="form-control sI20" [ngModel]="defaultSampana">
                     <option value="lovitao">Lovitao</option>
                     <option value="mpianjoria">Mpianjoria</option>
                     <option value="mpamakilay">Mpamakilay</option>
@@ -41,13 +40,13 @@
             </div>
             
             <div class="form-group">
-                <label for="password">Teny Miafina: </label>
-                <input type="password" name="password" id="password" class="form-control" ngModel required>
+                <label for="password" class="h3">Teny Miafina: </label>
+                <input type="password" name="password" id="password" class="form-control sI20" ngModel required>
             </div>
             <div class="form-group">
-                <button [disabled]="info.invalid" type="submit" class="btn btn-primary btn-block">Hamorona</button>
+                <button [disabled]="info.invalid" type="submit" class="btn btn-primary btn-block sI20">Hamorona</button>
             </div>
-            <div class="form-group">
+            <div class="form-group" class="h3">
                 <a routerLink="">Efa manana Kaonty</a>
             </div>
         </form>

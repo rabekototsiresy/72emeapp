@@ -2,14 +2,14 @@
     <img class="card-img-top-full rounded" [src]="trueImageLink" alt="Card image">
     <div class="card-body">
         <ul class="list-group">
-            <li class="list-group-item">
-               <b>Anarana: </b> {{ user.fullName }}
+            <li class="list-group-item h4">
+               <b >Anarana: </b> {{ user.fullName }}
             </li>
-            <li class="list-group-item">
-                <b>Fiantsoana: </b>{{user.username}}
+            <li class="list-group-item h4">
+                <b >Fiantsoana: </b>{{user.username}}
             </li>
-            <li class="list-group-item">
-                <b>Andraikitra: </b>{{user.role}}
+            <li class="list-group-item h4">
+                <b >Andraikitra: </b>{{user.role}}
             </li>
           </ul>
           <br>
@@ -17,9 +17,9 @@
               
           </div>
          <div class="col-md-12  d-flex justify-content-between ">
-            <a *ngIf="!user.avatar" [routerLink]="'/upload-avatar/'+[idUser]" class="btn btn-success mx-1 ">Hampiditra sary</a>
+            <a *ngIf="!user.avatar" [routerLink]="'/upload-avatar/'+[idUser]" class="btn btn-success mx-1 sI20">Hampiditra sary</a>
 
-            <a  [routerLink]="'/'+[linkBack]" class="btn btn-primary mx-1">HIVERINA</a>
+            <a  [routerLink]="'/'+[linkBack]" class="btn btn-primary mx-1 sI20">HIVERINA</a>
          </div>
 
          

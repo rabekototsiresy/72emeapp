@@ -1,27 +1,3 @@
-<!-- <div class="col-md-7">
-    <div class="row my-2">
-        <div class="card col-md-2 border">
-            <img [src]="imageLink" class="img-fluid" alt="...">
-        </div>
-        <div class="col-md-9 card mx-2">
-            <!-- <h5><u><b>Anarana: </b></u> <i>RABEKOTO Tsiresy NY Riana Aldo Janny</i></h5>
-            <h5><u><b>Adiresy: </b></u> <i>LOT 239 I Ambohinambo Talatamaty</i></h5>
-            <h5><u><b>Finday: </b></u> <i>034 88 099 77</i></h5> -->
-            <!-- <h5><u><b>Anarana: </b></u> <i>{{mp.fullName}}</i></h5>
-            <h5><u><b>Anjara asa: </b></u> <i>{{mp.role}}</i></h5>
-            <h5><u><b>sampana: </b></u> <i>{{mp.sampana}}</i></h5>
-            
-                <a [routerLink]="'/user/'+[id_user]" class="btn btn-primary">HIJERY</a> -->
-        <!-- </div>   
-    </div>
-</div>  -->
-
-
-
-
-
-
-
 
 <div class="card mb-3 card-details border" style="max-width: 540px;">
     <div class="row g-0">
@@ -30,11 +6,10 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <!-- <h5 class="card-title">Card title</h5> -->
           <p class="card-text">
-            <b>Anarana: </b> <i>{{mp.fullName}}</i>
-          </p>
-          <p class="card-text"><small class="text-muted">{{mp.sampana}}</small></p>
+          <p class="h4"><b>Anarana: </b> <i>{{mp.fullName}}</i></p>
+  
+          <p class="card-text"><small class="text-muted h5">{{mp.sampana}}</small></p>
           <p class="d-flex justify-content-between">
             <a [routerLink]="'/user/'+[id_user]" class="btn btn-primary">HIJERY</a>
             <a [routerLink]="'/user/edit/'+[id_user]" class="btn btn-success" *ngIf="isNotBeazina" >HANOVA</a>

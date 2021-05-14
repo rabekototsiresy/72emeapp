@@ -5,8 +5,8 @@
 
         <div class="col-md-2 card my-5 border-black  bg-yellow">
                 <!--   Si tonia  -->
-                <p *ngIf="isTonia">Tonia</p>
-                <p *ngIf="!isTonia">Mpiandraikitra</p>
+                <p *ngIf="isTonia" class="h3">Tonia</p>
+                <p *ngIf="!isTonia" class="h3">Mpiandraikitra</p>
                 <h1 *ngIf="isTonia">{{numOfTonia}}</h1>
                 <h1 *ngIf="!isTonia">{{numberOfMp}}</h1>
         </div>
@@ -25,7 +25,7 @@
 <div class="container" *ngIf="!isTonia">
     <div class="row mt-65">
         <div class="col-md-2 col-sm-4 mb-3 card border-black bg-yellow">
-            <p>Beazina</p>
+            <p class="h3">Beazina</p>
             <h1>{{numOfBea}}</h1>
         </div>
         <div class="col-md-8 ">
